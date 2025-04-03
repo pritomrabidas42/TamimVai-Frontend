@@ -12,7 +12,7 @@ export default {
     extend: {
       colors: {
         primary: "#212121",
-        secandari: "#289c28",
+        secandari: "#e47277",
         brand: "#9b9fa5",
       },
       fontFamily: {
