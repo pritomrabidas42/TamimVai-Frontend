@@ -3,7 +3,9 @@ import React from 'react'
 const Map = () => {
   return (
     <section className="py-10 text-center">
-      <h2 className="text-3xl font-bold">Find Us</h2>
+      <h2 className="text-3xl text-primary font-Opensans font-bold text-center py-5">
+        Find Us
+      </h2>
       <div className="mt-6 w-full h-64">
         <iframe
           title="Google Maps"
