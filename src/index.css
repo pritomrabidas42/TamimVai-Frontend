@@ -19,3 +19,23 @@ html{
     border: 2px solid transparent;
   }
 
+/* Add this to style pagination or embed via tailwind classes */
+.react-paginate {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.react-paginate li {
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.375rem;
+}
+
+.react-paginate li.selected {
+  background-color: black;
+  color: white;
+}

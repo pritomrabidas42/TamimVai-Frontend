@@ -13,7 +13,7 @@ const NewArrivals = () => {
               <img
                 src="home-1.jpg"
                 alt={cake}
-                className="w-full h-40 object-cover rounded-md"
+                className="w-full h-52 object-cover rounded-md"
               />
               <h3 className="mt-2 text-primary font-bold font-Nunito-font">
                 {cake}

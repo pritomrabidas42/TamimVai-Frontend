@@ -11,7 +11,7 @@ const AllKindsOfCakes = () => {
               <img
                 src="home-2.jpg"
                 alt={type}
-                className="w-full h-40 object-cover rounded-md"
+                className="w-full h-52 object-cover rounded-md"
               />
               <h3 className="text-gray-600 text-sm font-normal font-Popins pt-2">
                 {type} Cake
