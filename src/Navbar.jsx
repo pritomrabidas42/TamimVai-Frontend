@@ -42,13 +42,15 @@ const Navbar = () => {
 
         {/* Cart Icon & Mobile Menu Button */}
         <div className="flex items-center gap-4">
+          <Link to="/register" className="text-base font-normal font-Nunito-font text-primary hover:text-secandari duration-200 hover:underline  ">Register</Link>
           <ShoppingCart className="text-lg text-primary hover:text-secandari duration-200 cursor-pointer" />
 
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden text-primary hover:text-secandari duration-200 cursor-pointer"
           >
-            {isOpen ? <X className="text-lg" /> : <Menu className="text-lg" />}
+            {" "}
+            <Menu className="text-lg" />
           </button>
         </div>
       </div>
@@ -56,26 +58,46 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden fixed top-0 left-0 right-0 shadow-lg p-4 z-50 w-full h-full flex flex-col items-center justify-center bg-[rgba(0,0,0,0.24)] ">
-          <div className="w-1/2"></div>
+          <div onClick={() => setIsOpen(false)} className="w-1/2"></div>
           <div className="w-1/2 absolute right-0 top-8 h-[90%] bg-white rounded-lg shadow-lg p-4 ">
-            <ul className=" text-primary text-center py-4 space-y-4">
+            <X
+              onClick={() => setIsOpen(false)}
+              className="text-base cursor-pointer text-primary hover:text-secandari duration-200 my-5"
+            />
+            <ul className=" text-primary text-lg font-medium font-Monrope py-4 space-y-5">
               <li>
-                <Link to="/" className="block">
+                <Link
+                  to="/"
+                  onClick={() => setIsOpen(false)}
+                  className="block hover:text-secandari duration-200"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/shop" className="block">
+                <Link
+                  to="/shop"
+                  onClick={() => setIsOpen(false)}
+                  className="block hover:text-secandari duration-200"
+                >
                   Shop
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="block">
+                <Link
+                  to="/about"
+                  onClick={() => setIsOpen(false)}
+                  className="block hover:text-secandari duration-200"
+                >
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="block">
+                <Link
+                  to="/contact"
+                  onClick={() => setIsOpen(false)}
+                  className="block hover:text-secandari duration-200"
+                >
                   Contact
                 </Link>
               </li>
