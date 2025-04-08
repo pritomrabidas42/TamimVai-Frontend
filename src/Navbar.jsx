@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Menu, X, ShoppingCart, Search } from "lucide-react";
 import { Link } from "react-router-dom";
+import ShopingCart from "./Components/ShopingCart";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState("");
+  const [shop, setShop] = useState(true);
   return (
     <nav className="p-5 shadow-sm fixed w-full bg-white z-40 top-0 left-0 right-0">
       <div className="container mx-auto flex items-center justify-between">
@@ -42,8 +44,25 @@ const Navbar = () => {
 
         {/* Cart Icon & Mobile Menu Button */}
         <div className="flex items-center gap-4">
-          <Link to="/register" className="text-base font-normal font-Nunito-font text-primary hover:text-secandari duration-200 hover:underline  ">Register</Link>
-          <ShoppingCart className="text-lg text-primary hover:text-secandari duration-200 cursor-pointer" />
+          <Link
+            to="/register"
+            className="text-base font-normal font-Nunito-font text-primary hover:text-secandari duration-200 hover:underline  "
+          >
+            Register
+          </Link>
+          {shop ? (
+            <li
+              onClick={() => setShop(false)}
+              className="hover:text-secandari relative flex items-center"
+            >
+              <ShoppingCart className="text-lg text-primary hover:text-secandari duration-200 cursor-pointer" />
+              <span className="text-[8px] absolute -top-1 -right-2 flex items-center justify-center rounded-full bg-secandari text-white w-4 h-4">
+                2
+              </span>
+            </li>
+          ) : (
+            <ShopingCart setShop={setShop} />
+          )}
 
           <button
             onClick={() => setIsOpen(!isOpen)}
