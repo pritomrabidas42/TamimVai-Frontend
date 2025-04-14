@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ProductData } from "../../api/Index";
 
 const CustomPrevArrow = ({ onClick }) => (
   <button
     onClick={onClick}
-    className="absolute left-0 z-10 bg-secandari text-white p-1 rounded-full cursor-pointer"
+    className="absolute left-0 top-[50%] z-10 bg-secandari text-white p-1 rounded-full cursor-pointer"
     style={{ top: "50%", transform: "translateY(-50%)" }}
   >
     <ChevronLeft size={15} />
@@ -25,23 +26,26 @@ const CustomNextArrow = ({ onClick }) => (
   </button>
 );
 
-const productData = [
-  { title: "BIRTHDAY CAKE", img: "banner.jpg" },
-  { title: "CUPCAKE", img: "banner.jpg" },
-  { title: "CAKE", img: "banner.jpg" },
-  { title: "CHOCOLATE CAKE", img: "banner.jpg" },
-  { title: "FASHION", img: "banner.jpg" },
-];
-
 const Sliders = () => {
-  const [selected, setSelected] = useState("CHOCOLATE CAKE");
+  const [productList, setProductList] = useState([]);
+  useEffect(() => {
+    ProductData()
+      .then((res) => {
+        setProductList(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+  productList.length = 25;
+  console.log(productList);
 
   const settings = {
     dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 2,
+    slidesToScroll: 3,
     prevArrow: <CustomPrevArrow />,
     nextArrow: <CustomNextArrow />,
     responsive: [
@@ -79,25 +83,20 @@ const Sliders = () => {
           </span>
         </div>
         <Slider {...settings}>
-          {productData.map((item, index) => (
-            <div key={index} className="flex flex-col justify-center  items-center p-4">
-              <div
-                className={`rounded-full w-24 h-24 overflow-hidden border-2 transition-all duration-300 ${
-                  selected === item.title
-                    ? "border-red-400"
-                    : "border-transparent"
-                }`}
-                onClick={() => setSelected(item.title)}
+          {productList.map((item, index) => (
+            <div
+              key={index}
+              className="flex flex-col justify-center  items-center p-4"
+            >
+              <Link
+                className={`rounded-full w-24 h-24 overflow-hidden  transition-all duration-300 `}
               >
                 <img
-                  src={item.img}
-                  alt={item.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  src={item?.images[2]}
+                  alt={item.name}
+                  className="w-full h-full rounded-full object-cover hover:scale-105 transition-transform duration-300"
                 />
-              </div>
-              <p className="mt-3 justify-center mx-auto text-xs font-semibold font-Monrope text-gray-700">
-                {item.title}
-              </p>
+              </Link>
             </div>
           ))}
         </Slider>

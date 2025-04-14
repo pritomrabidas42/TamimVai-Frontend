@@ -5,7 +5,7 @@ const Shop = () => {
   return (
     <div className="pt-20">
       <Sliders />
-      <PaginatedItems itemsPerPage={8} />
+      <PaginatedItems itemsPerPage={16} />
     </div>
   );
 };
