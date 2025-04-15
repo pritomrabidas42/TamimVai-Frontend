@@ -13,6 +13,7 @@
     "@shadcn/ui": "^0.0.4",
     "@tailwindcss/vite": "^4.1.0",
     "axios": "^1.8.4",
+    "emailjs-com": "^3.2.0",
     "lucide-react": "^0.487.0",
     "product-slide": "^1.0.9",
     "react": "^19.0.0",

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ProductData } from "../../api/Index";
+import { Link } from "react-router-dom";
 
 const NewArrivals = () => {
   const [productList, setProductList] = useState([]);
@@ -35,9 +36,9 @@ const NewArrivals = () => {
               <p className="text-gray-600 text-sm font-normal font-Popins">
                 {item?.title.substring(0, 20)}...
               </p>
-              <button className="mt-4 inline-block bg-secandari text-black text-base font-medium font-Monrope px-8 py-2.5 scale-95 rounded-lg cursor-pointer">
+              <Link to={`/shop/${item?.id}`} className="mt-4 inline-block bg-secandari text-black text-base font-medium font-Monrope px-8 py-2.5 scale-95 rounded-lg cursor-pointer">
                 Buy Now
-              </button>
+              </Link>
             </div>
           ))}
         </div>
