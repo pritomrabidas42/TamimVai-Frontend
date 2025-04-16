@@ -2,13 +2,19 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa6";
+import { addToCart } from "../../features/counter/counterSlice";
+import { useDispatch } from "react-redux";
 
 const Items = ({ data }) => {
   const [heart, setHeart] = useState(false);
+  const dispatch = useDispatch();
   return (
     <div className="pt-5 pb-10">
       <div className="bg-white  rounded-lg shadow hover:shadow-md transition">
-        <Link to={`/shop/${data?.id}`}>
+        <Link
+          onClick={() => dispatch(addToCart(data))}
+          to={`/shop/${data?.id}`}
+        >
           <img
             src={data?.images[0]}
             alt={data?.name}
@@ -37,6 +43,7 @@ const Items = ({ data }) => {
               />
             )}
             <Link
+              onClick={() => dispatch(addToCart(data))}
               to={`/shop/${data?.id}`}
               className="text-secandari hover:border-b pt-1 duration-300 text-sm font-Monrope font-normal cursor-pointer"
             >

@@ -78,7 +78,6 @@ const setting = {
     direction: "vertical", // or "horizontal",
     zoom: true, // or false
   };
-  console.log(product);
 
   return (
     <section>
