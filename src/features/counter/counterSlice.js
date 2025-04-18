@@ -11,7 +11,6 @@ export const counterSlice = createSlice({
     addToCart: (state, action) => {
       state.product.push(action.payload)
       localStorage.setItem("product", JSON.stringify(state.product));
-      console.log(state.product);
       
     },
   },

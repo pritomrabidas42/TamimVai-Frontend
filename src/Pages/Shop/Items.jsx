@@ -11,16 +11,11 @@ const Items = ({ data }) => {
   return (
     <div className="pt-5 pb-10">
       <div className="bg-white  rounded-lg shadow hover:shadow-md transition">
-        <Link
-          onClick={() => dispatch(addToCart(data))}
-          to={`/shop/${data?.id}`}
-        >
-          <img
-            src={data?.images[0]}
-            alt={data?.name}
-            className="w-full h-60 object-cover mb-4 rounded"
-          />
-        </Link>
+        <img
+          src={data?.images[0]}
+          alt={data?.name}
+          className="w-full h-60 object-cover mb-4 rounded"
+        />
         <div className="p-4 flex justify-between items-center">
           <div>
             <h3 className="text-base font-semibold text-primary font-Nunito-font">

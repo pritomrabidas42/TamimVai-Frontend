@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { ProductData } from "../../api/Index";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../../features/counter/counterSlice";
+// import { useDispatch } from "react-redux";
+// import { addToCart } from "../../features/counter/counterSlice";
 
 const NewArrivals = () => {
   const [productList, setProductList] = useState([]);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   useEffect(() => {
     ProductData()
       .then((res) => {
@@ -27,16 +27,11 @@ const NewArrivals = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 px-4">
           {productList.map((item) => (
             <div key={item.id} className="bg-white rounded-lg shadow pb-3">
-              <Link
-                onClick={() => dispatch(addToCart(item))}
-                to={`/shop/${item?.id}`}
-              >
-                <img
-                  src={item?.images[0]}
-                  alt={item?.title}
-                  className="w-full h-52 object-cover rounded-md"
-                />
-              </Link>
+              <img
+                src={item?.images[0]}
+                alt={item?.title}
+                className="w-full h-52 object-cover rounded-md"
+              />
               <h3 className="mt-2 text-primary font-bold font-Nunito-font">
                 $ <span className="text-sm text-gray-500">{item?.price}</span>
               </h3>
@@ -44,7 +39,7 @@ const NewArrivals = () => {
                 {item?.title.substring(0, 20)}...
               </p>
               <Link
-                onClick={() => dispatch(addToCart(item))}
+                // onClick={() => dispatch(addToCart(item))}
                 to={`/shop/${item?.id}`}
                 className="mt-4 inline-block bg-secandari text-black text-base font-medium font-Monrope px-8 py-2.5 scale-95 rounded-lg cursor-pointer"
               >

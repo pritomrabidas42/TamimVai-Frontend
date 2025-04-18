@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import { Menu, X, ShoppingCart, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 import ShopingCart from "./Components/ShopingCart";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState("");
   const [shop, setShop] = useState(true);
+  
+
   return (
     <nav className="p-5 shadow-sm fixed w-full bg-white z-40 top-0 left-0 right-0">
       <div className="container mx-auto flex items-center justify-between">
