@@ -1,6 +1,13 @@
-import React from "react";
+import { useSelector } from "react-redux";
 
 const OderReview = () => {
+  const productList = useSelector((state) => state.cartList.product);
+  const totalprice = productList.reduce(
+    (total, products) => total + products?.allPrice,
+    0
+  );
+  console.log(productList);
+  
   return (
     <div className="">
       <h3 className="text-2xl text-primary font-Popins font-semibold pb-4">
@@ -16,16 +23,6 @@ const OderReview = () => {
             </tr>
           </thead>
           <tbody>
-            <tr className=" border-b">
-              <td className="px-4 py-2.5 w-1/2 text-base font-normal text-primary font-NunitoFont">
-                Intense brightening exfoliating powder - 14&nbsp;
-                <strong className="">×&nbsp;4</strong>
-              </td>
-              <td className="font-Monrope text-base font-normal text-primary text-right px-4 py-2">
-                <span className="">$</span>
-                1,120.48
-              </td>
-            </tr>
           </tbody>
           <tfoot>
             <tr className=" border-t">
@@ -34,7 +31,7 @@ const OderReview = () => {
               </th>
               <td className=" font-Monrope text-base font-normal text-primary text-right px-4 py-2">
                 <span className="">$</span>
-                1,120.48
+                {totalprice}
               </td>
             </tr>
             <tr className="border-t font-Raleway text-lg text-primary font-medium">
@@ -45,7 +42,7 @@ const OderReview = () => {
               <td className="text-left px-4 py-2">Total</td>
               <td className="text-right px-4 py-2">
                 <span className="">$</span>
-                1,120.48
+                {totalprice}
               </td>
             </tr>
           </tfoot>

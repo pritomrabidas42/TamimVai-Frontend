@@ -9,14 +9,16 @@ export const counterSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      state.product.push(action.payload)
+      state.product.push(action.payload);
       localStorage.setItem("product", JSON.stringify(state.product));
-      
     },
-  },
+    removeFromCart: (state, action) => {
+      state.product = state.product.filter((item)=> item.id !== action.payload);
+    }
+  }
 });
 
 // Action creators are generated for each case reducer function
-export const { addToCart } = counterSlice.actions;
+export const { addToCart, removeFromCart } = counterSlice.actions;
 
 export default counterSlice.reducer;

@@ -29,27 +29,11 @@ const DetailsRight = ({ data }) => {
         <p className="font-nunitoFont font-normal text-xs text-[#9F9F9F] py-3">
           {data?.description}
         </p>
-        <div className="flex gap-1">
-          <ul className="flex gap-1.5 text-base text-[#FFC700]">
-            <li>
-              <FaStar />
-            </li>
-            <li>
-              <FaStar />
-            </li>
-            <li>
-              <FaStar />
-            </li>
-            <li>
-              <FaStar />
-            </li>
-            <li>
-              <FaStarHalf />
-            </li>
-          </ul>
-          <p className="font-Popins font-normal text-sm text-[#9F9F9F] border-l-2 border-[#9F9F9F] pl-5">
-            5 Customer Review
-          </p>
+        <div className="flex gap-1 items-center">
+          <p>Price</p>
+          <span className="font-Popins font-normal text-sm text-secandari  pl-2">
+            $ {data?.price}
+          </span>
         </div>
         <p className="font-nunitoFont font-normal text-sm text-[#9F9F9F] w-3/4 pb-5"></p>
         <h4 className="font-normal font-Opensans text-sm text-primary pb-2">

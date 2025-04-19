@@ -8,26 +8,15 @@ const Froms = () => {
         Billing details
       </h3>
       <form>
-        <div className="flex gap-7">
           <div>
             <h4 className="text-lg text-primary font-Raleway font-medium pb-2">
-              First name
+              Full Name
             </h4>
             <input
               type="text"
-              className="outline-none border-2 rounded-md px-5 py-3 text-sm text-primary font-Montserrat font-normal focus:border-secandari duration-200 w-full lg:w-52 xl:w-64"
+              className="outline-none border-2 rounded-md px-5 py-3 text-sm text-primary font-Montserrat font-normal focus:border-secandari duration-200 w-full "
             />
           </div>
-          <div>
-            <h4 className="text-lg text-primary font-Raleway font-medium pb-2">
-              Last name
-            </h4>
-            <input
-              type="text"
-              className="outline-none border-2 rounded-md px-5 py-3 text-sm text-primary font-Montserrat font-normal focus:border-secandari duration-200 w-full lg:w-52 xl:w-64"
-            />
-          </div>
-        </div>
         <div>
           <h4 className="text-lg text-primary font-Raleway font-medium py-2">
             Company name (optional)

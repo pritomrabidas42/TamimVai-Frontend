@@ -1,36 +1,44 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { removeFromCart } from "../../features/counter/counterSlice";
 const Cart = () => {
   const productList = useSelector((state) => state.cartList.product);
-  
+  const dispatch = useDispatch();
   return (
     <div className=" mx-auto sm:p-4 p-1">
       <form className="bg-white rounded-lg sm:p-6 p-1">
         <table className="h-[200px] overflow-y-scroll">
-          <tr className="w-full ">
-            <th className="sm:p-3 p-2 text-primary font-Popins text-[10px] sm:text-sm font-medium">
-              Remove
-            </th>
-            <th className="sm:p-3 p-2 text-primary font-Popins sm:text-sm text-[10px] font-medium">
-              Thumbnail
-            </th>
-            <th className="sm:p-3 p-2 text-primary font-Popins text-[10px] sm:text-sm font-medium">
-              Product
-            </th>
-            <th className="sm:p-3 p-2 text-primary font-Popins text-[10px] sm:text-sm font-medium">
-              Price
-            </th>
-            <th className="sm:p-3 p-2 text-primary font-Popins text-[10px] sm:text-sm font-medium">
-              Quantity
-            </th>
-            <th className="sm:p-3 p-2 text-primary font-Popins text-[10px] sm:text-sm font-medium">
-              Subtotal
-            </th>
-          </tr>
+          <thead>
+            <tr className="w-full">
+              <th className="sm:p-3 p-2 text-primary font-Popins text-[10px] sm:text-sm font-medium">
+                Remove
+              </th>
+              <th className="sm:p-3 p-2 text-primary font-Popins sm:text-sm text-[10px] font-medium">
+                Thumbnail
+              </th>
+              <th className="sm:p-3 p-2 text-primary font-Popins text-[10px] sm:text-sm font-medium">
+                Product
+              </th>
+              <th className="sm:p-3 p-2 text-primary font-Popins text-[10px] sm:text-sm font-medium">
+                Price
+              </th>
+              <th className="sm:p-3 p-2 text-primary font-Popins text-[10px] sm:text-sm font-medium">
+                Quantity
+              </th>
+              <th className="sm:p-3 p-2 text-primary font-Popins text-[10px] sm:text-sm font-medium">
+                Subtotal
+              </th>
+            </tr>
+          </thead>
           <tbody>
             {productList.map((item) => (
-              <tr key={item.key} className="border-t border-gray-300 ">
+              <tr key={item.id} className="border-t border-gray-300 ">
                 <td className="sm:p-2 p-1 text-center">
-                  <button className="text-red-500 text-xl">×</button>
+                  <button
+                    onClick={() => dispatch(removeFromCart(item?.id))}
+                    className="text-red-500 cursor-pointer text-xl"
+                  >
+                    ×
+                  </button>
                 </td>
                 <td className="sm:p-2 p-1">
                   <img

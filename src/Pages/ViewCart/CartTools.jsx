@@ -1,7 +1,13 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const CartTools = () => {
+  const productList = useSelector((state) => state.cartList.product);
+  const totalprice = productList.reduce(
+    (total, products) => total + products?.allPrice,
+    0
+  );
   const [shippingVisible, setShippingVisible] = useState(false);
   const [formData, setFormData] = useState({
     country: "default",
@@ -24,7 +30,7 @@ const CartTools = () => {
               Subtotal
             </th>
             <td className="p-2 font-medium text-primary font-Monrope sm:text-base text-sm">
-              $1,896.16
+              $ {totalprice.toFixed(2)}
             </td>
           </tr>
           <tr className="border-b">
@@ -91,7 +97,7 @@ const CartTools = () => {
               Total
             </th>
             <td className="p-2 font-medium text-primary font-Monrope text-base">
-              $1,896.16
+              $ {totalprice.toFixed(2)}
             </td>
           </tr>
         </tbody>

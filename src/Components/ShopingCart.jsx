@@ -1,13 +1,14 @@
 import { RxCross2 } from "react-icons/rx";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { removeFromCart } from "../features/counter/counterSlice";
 const ShopingCart = ({ setShop }) => {
   const productList = useSelector((state) => state.cartList.product);
   const totalprice = productList.reduce(
     (total, products) => total + products?.allPrice,
     0
   );
-  console.log(totalprice);
+  const dispatch = useDispatch();
   return (
     <div className="absolute w-full top-0 left-0 bg-[rgba(0,0,0,0.17)] flex transition-all duration-500 h-screen">
       <div
@@ -48,7 +49,7 @@ const ShopingCart = ({ setShop }) => {
                       </span>
                     </p>
                   </div>
-                  <button className="text-secandari border-secandari rounded-full p-1 border cursor-pointer duration-200 hover:text-red-500 hover:border-red-500">
+                  <button onClick={()=>dispatch(removeFromCart(item?.id))} className="text-secandari border-secandari rounded-full p-1 border cursor-pointer duration-200 hover:text-red-500 hover:border-red-500">
                     <RxCross2 className="text-[10px] " />
                   </button>
                 </li>
