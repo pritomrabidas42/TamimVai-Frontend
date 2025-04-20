@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../features/counter/counterSlice";
-import { FaStar } from "react-icons/fa";
-import { FaStarHalf } from "react-icons/fa";
+import { toast, ToastContainer } from "react-toastify";
 const DetailsRight = ({ data }) => {
   const [quantity, setQuantity] = useState(1);
   data.size = ["L", "XL", "XS"];
@@ -19,9 +18,15 @@ const DetailsRight = ({ data }) => {
       allPrice: data?.price * quantity,
     };
     dispatch(addToCart(data));
+    toast.success("Product add to cart succesfully", {
+      position: "top-center",
+    });
   };
   return (
     <div className="w-[60%]">
+      <ToastContainer
+        position="top-center"
+      />
       <div className="xl:w-1/2 lg:w-1/2 md:w-3/4 sm:w-4/5 w-full justify-center mx-auto">
         <h2 className="font-Opensans text-primary font-medium text-2xl">
           {data?.title}

@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { Menu, X, ShoppingCart, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 import ShopingCart from "./Components/ShopingCart";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState("");
   const [shop, setShop] = useState(true);
-  
-
+  const productList = useSelector((state) => state.cartList.product);
   return (
     <nav className="p-5 shadow-sm fixed w-full bg-white z-40 top-0 left-0 right-0">
       <div className="container mx-auto flex items-center justify-between">
@@ -60,7 +60,7 @@ const Navbar = () => {
             >
               <ShoppingCart className="text-lg text-primary hover:text-secandari duration-200 cursor-pointer" />
               <span className="text-[8px] absolute -top-1 -right-2 flex items-center justify-center rounded-full bg-secandari text-white w-4 h-4">
-                2
+                {productList.length}
               </span>
             </li>
           ) : (
