@@ -36,20 +36,20 @@ const Form = () => {
       >
         <input
           type="text"
-          name="user_name"
+          name="name"
           placeholder="Your Name"
           className="border p-3 rounded-md w-full outline-none  border-gray-300 text-sm text-primary font-Popins"
           required
         />
         <input
           type="email"
-          name="user_email"
+          name="email"
           placeholder="Your Email"
           className="border p-3 rounded-md w-full outline-none  border-gray-300 text-sm text-primary font-Popins"
           required
         />
         <textarea
-          name="message"
+          name="project"
           placeholder="Your Message"
           rows="5"
           className="border p-3 rounded-md w-full outline-none  border-gray-300 text-sm text-primary font-Popins"
