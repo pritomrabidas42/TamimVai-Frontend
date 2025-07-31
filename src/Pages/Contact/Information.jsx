@@ -1,7 +1,7 @@
 const Information = () => {
   return (
     <section className="max-w-4xl mx-auto py-14 text-center">
-      <h2 className="text-3xl font-bold text-primary font-Opensans">Get in Touch</h2>
+      <h2 className="text-3xl uppercase text-primary font-Nunito-font font-semibold text-center">Get in Touch</h2>
       <p className="my-4 text-gray-700 font-normal font-Popins text-sm">
         Have questions or special requests? Reach out to us and we'll be happy
         to assist!

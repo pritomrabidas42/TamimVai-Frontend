@@ -12,16 +12,13 @@ export default {
     extend: {
       colors: {
         primary: "#212121",
-        secandari: "#e47277",
+        secandari: "#009966",
         brand: "#9b9fa5",
       },
       fontFamily: {
         Popins: ["Poppins", "sans-serif"],
         NunitoFont: ["Nunito", "sans-serif"],
-        Montserrat: ["Montserrat", "sans-serif"],
-        Raleway: ["Raleway", "sans-serif"],
         Opensans: ["Open Sans", "sans-serif"],
-        Montez: ["Montez", "serif"],
         Monrope: ["Manrope", "serif"],
       },
     },

@@ -1,37 +1,11 @@
-import React, { useRef } from "react";
-import emailjs from "emailjs-com";
 const Form = () => {
-  const form = useRef();
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        "service_99t8mvk",
-        "template_dawoxxq",
-        form.current,
-        "Xr2QJ71Wn52Q92xeO"
-      )
-      .then(
-        (result) => {
-          alert("Message sent successfully!");
-          form.current.reset(); // clear form
-        },
-        (error) => {
-          alert("Failed to send message. Please try again.");
-          console.error(error.text);
-        }
-      );
-  };
+  
   return (
     <section className="bg-white p-8 max-w-4xl mx-auto rounded-lg shadow-sm my-10">
-      <h2 className="text-3xl text-primary font-Opensans font-bold text-center">
+      <h2 className="text-3xl uppercase text-primary font-Nunito-font font-semibold text-center">
         Send Us a Message
       </h2>
       <form
-        ref={form}
-        onSubmit={sendEmail}
         className="mt-6 grid grid-cols-1 gap-6"
       >
         <input
@@ -57,7 +31,7 @@ const Form = () => {
         ></textarea>
         <button
           type="submit"
-          className="bg-secandari text-white text-base font-Monrope  px-7 py-2.5 rounded-lg w-fit font-bold scale-95 cursor-pointer"
+          className="bg-secandari text-white text-base font-Monrope  px-7 py-2.5 rounded-lg w-full font-bold  cursor-pointer"
         >
           Send Message
         </button>

@@ -1,7 +1,4 @@
-import Choose from "../Pages/About/Choose";
-import Contact from "../Pages/About/Contact";
-import Story from "../Pages/About/Story";
-import Testimonials from "../Pages/About/Testimonials";
+import AboutUs from "../Pages/About/AboutUs";
 import Banner from "../Pages/Home/Banner";
 
 const About = () => {
@@ -11,10 +8,7 @@ const About = () => {
         heading={"About SweetTreats"}
         para={"Baking happiness, one cake at a time!"}
       />
-      <Story />
-      <Choose />
-      <Testimonials />
-      <Contact />
+      <AboutUs />
     </div>
   );
 };

@@ -6,7 +6,7 @@ import Map from "../Pages/Contact/Map";
 
 const Contact = () => {
   return (
-    <div className="pt-20">
+    <div className="md:pt-20 pt-16">
       <Banner
         heading={"Contact SweetTreats"}
         para={"We'd love to hear from you!"}

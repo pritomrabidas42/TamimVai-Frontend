@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 const Banner = ({para,heading}) => {
   return (
-    <section className="bg-[url('/banner.jpg')] bg-cover bg-center bg-no-repeat h-[400px] flex items-center justify-center text-white text-center px-4 w-full relative">
+    <section className="bg-[url('/banner.jpg')] bg-cover bg-center bg-no-repeat h-[300px] md:h-[400px] flex items-center justify-center text-white text-center px-4 w-full relative">
       <div className="absolute inset-0 bg-[rgba(0,0,0,0.41)] bg-opacity-50"></div>
       <div className="p-6 rounded-lg relative z-10">
-        <h1 className="text-5xl font-bold text-white font-Nunito-font">{ heading}</h1>
+        <h1 className="text-3xl md:text-5xl font-bold text-white uppercase font-Nunito-font">{ heading}</h1>
         <p className="mt-2 text-white text-sm font-normal font-Popins">{ para}</p>
         <Link
           to="/shop"

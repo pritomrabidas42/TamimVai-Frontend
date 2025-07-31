@@ -26,11 +26,11 @@ const NewArrivals = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 px-4">
           {productList.map((item) => (
-            <div key={item.id} className="bg-white rounded-lg shadow pb-3">
+            <div key={item.id} className="bg-white rounded-lg shadow pb-4">
               <img
                 src={item?.images[0]}
                 alt={item?.title}
-                className="w-full h-52 object-cover rounded-md"
+                className="w-full h-72 object-cover rounded-md"
               />
               <h3 className="mt-2 text-primary font-bold font-Nunito-font">
                 $ <span className="text-sm text-gray-500">{item?.price}</span>
@@ -43,7 +43,7 @@ const NewArrivals = () => {
                 to={`/shop/${item?.id}`}
                 className="mt-4 inline-block bg-secandari text-black text-base font-medium font-Monrope px-8 py-2.5 scale-95 rounded-lg cursor-pointer"
               >
-                Buy Now
+                View Details
               </Link>
             </div>
           ))}

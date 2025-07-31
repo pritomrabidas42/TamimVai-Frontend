@@ -10,9 +10,6 @@ import Home from "./Components/Home";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Shop from "./Components/Shop";
-import Checkout from "./Components/Checkout";
-import ViewCart from "./Components/ViewCart";
-import Register from "./Components/Register";
 import Details from "./Components/Details";
 
 function App() {
@@ -25,10 +22,7 @@ function App() {
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/shop" element={<Shop />}></Route>
           <Route path="/shop/:id" element={<Details />}></Route>
-          <Route path="/checkout" element={<Checkout />}></Route>
-          <Route path="/viewcart" element={<ViewCart />}></Route>
         </Route>
-        <Route path="/register" element={<Register />}></Route>
       </Route>
     )
   );
