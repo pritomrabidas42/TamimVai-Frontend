@@ -1,7 +1,6 @@
-import AboutUs from "../Pages/About/AboutUs";
-import PaginatedItems from "../Pages/Shop/PaginatedItems";
+import PaginatedItems from "../Pages/Products/PaginatedItems";
 
-const Shop = () => {
+const Product = () => {
   return (
     <div className="pt-20">
       <h1 className="text-3xl uppercase font-Nunito-font pt-10 font-bold text-center">Our Products</h1>
@@ -11,4 +10,4 @@ const Shop = () => {
   );
 };
 
-export default Shop;
+export default Product;

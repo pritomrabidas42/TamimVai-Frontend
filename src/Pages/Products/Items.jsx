@@ -1,9 +1,4 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaRegHeart } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa6";
-// import { addToCart } from "../../features/counter/counterSlice";
-// import { useDispatch } from "react-redux";
 
 const Items = ({ data }) => {
   return (

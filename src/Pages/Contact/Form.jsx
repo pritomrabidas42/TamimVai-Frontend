@@ -2,7 +2,7 @@ const Form = () => {
   
   return (
     <section className="bg-white p-8 max-w-4xl mx-auto rounded-lg shadow-sm my-10">
-      <h2 className="text-3xl uppercase text-primary font-Nunito-font font-semibold text-center">
+      <h2 className="sm:text-3xl text-2xl uppercase text-primary font-Nunito-font font-semibold text-center">
         Send Us a Message
       </h2>
       <form

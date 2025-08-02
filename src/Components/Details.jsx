@@ -83,7 +83,7 @@ const Details = () => {
   
   return (
     <section>
-      <div className="container mx-auto py-5">
+      <div className="container mx-auto p-5">
         {product && (
           <div key={product.id} className="flex pt-20">
             <div className=" w-[40%]">

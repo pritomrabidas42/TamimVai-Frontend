@@ -28,8 +28,8 @@ const Navbar = () => {
           <Link to="/" className="hover:text-secandari duration-200">
             Home
           </Link>
-          <Link to="/shop" className="hover:text-secandari duration-200">
-            Shop
+          <Link to="/product" className="hover:text-secandari duration-200">
+            Product
           </Link>
           <Link to="/about" className="hover:text-secandari duration-200">
             About

@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ProductData } from "../../api/Index";
 import { Link } from "react-router-dom";
-// import { useDispatch } from "react-redux";
-// import { addToCart } from "../../features/counter/counterSlice";
 
 const NewArrivals = () => {
   const [productList, setProductList] = useState([]);
@@ -21,7 +19,7 @@ const NewArrivals = () => {
   return (
     <section className="py-10 text-center">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold font-Opensans text-primary mt-6 pb-10">
+        <h2 className="sm:text-3xl text-2xl uppercase font-bold font-Opensans text-primary mt-6 pb-10">
           Our Product
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 px-4">
