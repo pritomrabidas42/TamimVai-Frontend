@@ -1,8 +1,8 @@
 import React from "react";
-import Banner from "../Pages/Home/Banner";
 import Information from "../Pages/Contact/Information";
 import Form from "../Pages/Contact/Form";
 import Map from "../Pages/Contact/Map";
+import Banner from "./Banner";
 
 const Contact = () => {
   return (

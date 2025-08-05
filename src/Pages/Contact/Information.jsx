@@ -6,7 +6,7 @@ const Information = () => {
         Have questions or special requests? Reach out to us and we'll be happy
         to assist!
       </p>
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 px-2">
         {[
           { title: "Phone", info: "+123 456 7890" },
           { title: "Email", info: "support@sweettreats.com" },

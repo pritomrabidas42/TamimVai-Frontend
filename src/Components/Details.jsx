@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import ProductSlide from "product-slide";
 
 import { useParams } from "react-router-dom";
