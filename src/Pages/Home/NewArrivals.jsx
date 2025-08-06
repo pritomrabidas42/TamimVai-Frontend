@@ -15,7 +15,8 @@ const NewArrivals = () => {
       });
   }, []);
   productList.length = 20;
-
+  console.log(productList);
+  
   return (
     <section className="py-10 text-center">
       <div className="container mx-auto">
